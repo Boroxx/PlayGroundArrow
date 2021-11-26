@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.arrow.gandiva', name: 'arrow-gandiva', version: '6.0.0'
+    runtimeOnly group: 'org.apache.arrow', name: 'arrow-memory-netty', version: '6.0.0'
+    testImplementation group: 'org.apache.arrow', name: 'arrow-memory-unsafe', version: '6.0.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
